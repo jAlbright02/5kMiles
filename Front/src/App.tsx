@@ -1,23 +1,29 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Admin from './pages/Admin';
+import Home from './pages/Home';
+
+function NavBar() {
+  return (
+    <nav className='navbar'>
+      <div className='nav-content'>
+        <h2><Link to='/' className='nav-home'>5k Miles Club</Link></h2>
+        <div>
+          <Link to='/admin' className='nav-link'>Admin</Link> 
+        </div>
+      </div>
+    </nav>
+  );
+}
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('https://youshouldntfindthis.jamesalbright.website/api/message')
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-      .catch(console.error);
-  }, []);
-
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Message from James:</h1>
-      <p>{message || 'Loading...'}</p>
-      <p>Not sure how these will look btw</p>
-      <img src='https://i.pinimg.com/736x/e5/d1/f5/e5d1f519da3abe6631fed6850e73b924.jpg'></img>
-      <img src='https://media1.tenor.com/m/PDiYbMpkf-8AAAAd/dog-smile.gif'></img>
-    </div>
+    <Router>
+      <NavBar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </Router>
   );
 }
 
