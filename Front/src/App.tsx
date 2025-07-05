@@ -4,7 +4,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('/api/message')
+    fetch('http://5kMilesBackend:5001/api/message')
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
       .catch(console.error);
