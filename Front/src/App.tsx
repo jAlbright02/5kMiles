@@ -4,7 +4,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5001/api/message')
+    fetch('http://ukg8o8k0woowggk88wo0wwcg.78.47.143.65.sslip.io/api/message')
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
       .catch(console.error);
