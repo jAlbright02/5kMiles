@@ -10,7 +10,6 @@ export default defineConfig({
       '/api': {
         target: 'http://5kmilesbackend:5001',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
