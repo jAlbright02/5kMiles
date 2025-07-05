@@ -6,11 +6,5 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5000,
-    proxy: {
-      '/api': {
-        target: 'http://5kmilesbackend:5001',
-        changeOrigin: true,
-      },
-    },
   },
 })
