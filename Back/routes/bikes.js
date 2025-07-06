@@ -5,6 +5,7 @@ const bikesRouter = Router();
 
 bikesRouter.get('/', async (req, res) => {
     try {
+        console.log('HERERERE', process.env.DATABASE_URL);
         const dbRes = await pool.query('SELECT * FROM bikes');
         console.log(dbRes);
         res.json(dbRes.rows);
