@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Admin from './pages/Admin';
 import Home from './pages/Home';
 import Bikes from './pages/Bikes';
+import MaintenanceSchedule from './pages/Maintenance';
 
 function NavBar() {
   return (
@@ -11,6 +12,7 @@ function NavBar() {
         <div>
           <Link to='/admin' className='nav-link'>Admin</Link> 
           <Link to='/bikes' className='nav-link'>Bikes</Link> 
+          <Link to='/maintenance-schedule' className='nav-link'>Maintenance</Link> 
         </div>
       </div>
     </nav>
@@ -25,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/bikes" element={<Bikes />} />
+        <Route path="/maintenance-schedule" element={<MaintenanceSchedule />} />
       </Routes>
     </Router>
   );
