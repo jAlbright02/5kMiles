@@ -5,7 +5,7 @@ const adminRouter = Router();
 adminRouter.post('/', (req, res) => {
   const { user, password } = req.body;
 
-  // Very basic example
+  //hardcoded right now, will be db soon
   if (user === 'admin' && password === '1234') {
     res.cookie('adminToken', 'your_secure_token_here', {
       httpOnly: true,
