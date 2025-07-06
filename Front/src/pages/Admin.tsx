@@ -22,10 +22,14 @@ export default function Admin() {
       }),
     });
 
-    if (res.ok) {
+    const resRes = await res.json();
+
+    if (resRes.pass === 'titch') {
+      navigate('/secret');
+    } else if (resRes.success) {
       navigate('/');
     } else {
-      alert("Invalid credentials");
+      alert('Invalid Credentials');
     }
   };
 

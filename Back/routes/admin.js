@@ -1,9 +1,17 @@
 import { Router } from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const adminRouter = Router();
 
 adminRouter.post('/', (req, res) => {
   const { user, password } = req.body;
+
+  if (user === process.env.CATS_EM && password === process.env.CATS_PASS) {
+    console.log(process.env.CATS_EM);
+    return res.status(200).json({ pass: 'titch' });
+  }
 
   //hardcoded right now, will be db soon
   if (user === 'admin' && password === '1234') {
@@ -12,12 +20,7 @@ adminRouter.post('/', (req, res) => {
       secure: true,
       sameSite: 'strict',
     });
-    return res.status(200).json({ message: 'Logged in' });
-  }
-
-  //hardcoded right now, will be db soon
-  if (user === '' && password === '') {
-    return res.status(200).json({ message: 'Logged in' });
+    return res.status(200).json({ success: true });
   }
 
   res.status(401).json({ error: 'Invalid credentials' });
