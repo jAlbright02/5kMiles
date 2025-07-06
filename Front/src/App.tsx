@@ -3,6 +3,7 @@ import Admin from './pages/Admin';
 import Home from './pages/Home';
 import Bikes from './pages/Bikes';
 import MaintenanceSchedule from './pages/Maintenance';
+import Shhh from './pages/Shhh';
 
 function NavBar() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/bikes" element={<Bikes />} />
         <Route path="/maintenance-schedule" element={<MaintenanceSchedule />} />
+        <Route path="/secret" element={<Shhh />} />
       </Routes>
     </Router>
   );

@@ -276,3 +276,36 @@ button:focus-visible {
 .nav-link:hover {
   text-decoration: underline;
 }
+
+/* Shhh CSS */
+/* styles.css */
+.shhh-container {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fef6ff;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.shhh-container h2 {
+  font-size: 2rem;
+  color: #6d28d9;
+  margin-bottom: 0.5rem;
+}
+
+.shhh-container p {
+  font-size: 1.1rem;
+  color: #4c1d95;
+  margin-bottom: 1.5rem;
+}
+
+.shhh-container img {
+  max-width: 150px;
+  margin: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.shhh-container img:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 10px rgba(109, 40, 217, 0.4);
+}
