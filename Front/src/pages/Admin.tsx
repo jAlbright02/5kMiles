@@ -12,7 +12,7 @@ export default function Admin() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch(`${backendURL}/api/admin`, { //something like if env is dev leave the endpoint but if prod then set to url
+    const res = await fetch(`${backendURL}/api/admin`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

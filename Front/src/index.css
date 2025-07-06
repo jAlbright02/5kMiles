@@ -22,6 +22,8 @@ a:hover {
   color: #535bf2;
 }
 
+/* Admin CSS */
+
 .adminForm {
   display: flex;
   flex-direction: column;
@@ -36,6 +38,51 @@ a:hover {
 .adminForm button {
   background-color: #302e2ebe;
 }
+
+/* Bike CSS */
+.bike-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.bike-card {
+  background: #1b1127;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 300px;
+  text-align: center;
+}
+
+.bike-card img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+}
+
+.bike-card-content {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.bike-card-content h3,
+.bike-card-content p {
+  margin: 0.5rem;
+}
+
+.bike-card-content button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+}
+
 
 body {
   margin: 0;
@@ -85,13 +132,14 @@ button:focus-visible {
 }
 
 .main-content {
-  padding-top: 60px; /* offset for navbar height */
+  padding-top: 60px;
   max-width: 1200px;
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
+/* The constant nav bar */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -101,7 +149,6 @@ button:focus-visible {
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   z-index: 1000;
 }
 
@@ -126,18 +173,18 @@ button:focus-visible {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  outline: none;       /* Remove focus outline */
-  box-shadow: none;    /* Remove any focus shadow */
-  user-select: none;   /* Optional: prevent text selection */
+  outline: none;
+  box-shadow: none;
+  user-select: none;   
 }
 
 .nav-home:hover,
 .nav-home:focus,
 .nav-home:active {
-  text-decoration: none; /* No underline on hover/focus/active */
+  text-decoration: none;
   outline: none;
   box-shadow: none;
-  color: white;          /* Keep the color same or choose */
+  color: white;
 }
 
 .nav-link:hover {
