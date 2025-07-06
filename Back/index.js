@@ -3,6 +3,7 @@ import cors    from 'cors';
 
 import adminRouter from './routes/admin.js';
 import bikesRouter from './routes/bikes.js';
+import maintRouter from './routes/maintenance.js';
 
 const app = express();
 const PORT = 5001;
@@ -30,6 +31,8 @@ app.use(express.json());
 app.use('/api/admin', adminRouter);
 
 app.use('/api/bikes', bikesRouter);
+
+app.use('/api/maintenance-schedule', maintRouter);
 
 app.listen(PORT, () => {
   console.log(`Backend listening on http://whatever:${PORT}`);
