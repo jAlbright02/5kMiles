@@ -32,7 +32,7 @@ app.use('/api/admin', adminRouter);
 
 app.use('/api/bikes', bikesRouter);
 
-app.use('/api/maintenance', maintRouter);
+app.use('/api/maintenance-schedule', maintRouter);
 
 app.listen(PORT, () => {
   console.log(`Backend listening on http://whatever:${PORT}`);
