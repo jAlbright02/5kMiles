@@ -29,14 +29,20 @@ a:hover {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  width: 360px;
+  width: 300px;
   padding: 1.5rem;
   background-color: #1a1a1a;
   border-radius: 12px;
 }
 
-.adminForm button {
+.adminForm button,
+.adminForm input {
+  width: 94%;
   background-color: #302e2ebe;
+}
+
+.adminForm button {
+  width: 100%;
 }
 
 /* Bike CSS */
