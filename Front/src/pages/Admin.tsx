@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const backendURL = import.meta.env.MODE === 'development' ? '' : 'https://youshouldntfindthis.jamesalbright.website';
+
 export default function Admin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -10,7 +12,7 @@ export default function Admin() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch('/api/admin', {
+    const res = await fetch(`${backendURL}/api/admin`, { //something like if env is dev leave the endpoint but if prod then set to url
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
