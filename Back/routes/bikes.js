@@ -1,9 +1,17 @@
 import { Router } from 'express';
+import pool from '../db.js';
 
 const bikesRouter = Router();
 
-bikesRouter.get('/', (req, res) => {
-    return res.status(200).json([{make: 'Yamaha', model: 'FZ6N', year: '2006'}]);
+bikesRouter.get('/', async (req, res) => {
+    try {
+        const dbRes = await pool.query('SELECT * FROM bikes');
+        console.log(dbRes);
+        res.json(dbRes.rows);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('DB Error')
+    }
 });
 
 export default bikesRouter;

@@ -2,8 +2,8 @@ import { Router } from 'express';
 
 const maintRouter = Router();
 
-maintRouter.get('/')
+// maintRouter.get('/')
 
-maintRouter.post('/')
+// maintRouter.post('/')
 
 export default maintRouter;

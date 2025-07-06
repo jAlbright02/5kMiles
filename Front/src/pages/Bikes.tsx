@@ -19,6 +19,7 @@ export default function Bikes() {
 
             if (res.ok) {
                 const bikeList = await res.json();
+                console.log(bikeList);
                 setBikes(bikeList);
             } else {
                 navigate('/');
