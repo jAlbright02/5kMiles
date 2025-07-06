@@ -1,14 +1,16 @@
 import express from 'express';
 import cors    from 'cors';
 
+import adminRouter from './routes/admin.js';
+
 const app = express();
 const PORT = 5001;
 
 app.use(cors());
 
-app.get('/api/message', (req, res) => {
-  res.json({ message: 'Hello darling dearest, i hope this finds you well xx' });
-});
+app.use(express.json());
+
+app.use('/api/admin', adminRouter);
 
 app.listen(PORT, () => {
   console.log(`Backend listening on http://whatever:${PORT}`);
