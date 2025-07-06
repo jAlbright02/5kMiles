@@ -6,7 +6,13 @@ import adminRouter from './routes/admin.js';
 const app = express();
 const PORT = 5001;
 
-app.use(cors());
+const corsOptions = {
+  "credentials": true,
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
+}
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
