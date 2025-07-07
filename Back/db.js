@@ -5,7 +5,7 @@ const { Pool } = pkg;
 
 dotenv.config();
 
-
+// Connect to postgres
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });

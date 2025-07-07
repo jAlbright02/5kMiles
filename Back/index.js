@@ -9,6 +9,8 @@ const app = express();
 const PORT = 5001;
 
 const corsOptions = {
+  // Have to do this so I can use cookies/credentials
+  // The cors stuff is because I have two domains and both are https
   origin: function (origin, callback) {
     const allowedOrigins = [
       'http://localhost:5000',

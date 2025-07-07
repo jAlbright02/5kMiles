@@ -9,7 +9,6 @@ adminRouter.post('/', (req, res) => {
   const { user, password } = req.body;
 
   if (user === process.env.CATS_EM && password === process.env.CATS_PASS) {
-    console.log(process.env.CATS_EM);
     return res.status(200).json({ pass: 'titch' });
   }
 
