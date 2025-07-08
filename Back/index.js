@@ -1,7 +1,8 @@
 import express from 'express';
 import cors    from 'cors';
 
-import adminRouter from './routes/admin.js';
+import loginRouter from './routes/accounts/login.js';
+import registerRouter from './routes/accounts/register.js';
 import bikesRouter from './routes/bikes.js';
 import maintRouter from './routes/maintenance.js';
 
@@ -30,7 +31,9 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
-app.use('/api/admin', adminRouter);
+app.use('/api/login', loginRouter);
+
+app.use ('/api/register', registerRouter);
 
 app.use('/api/bikes', bikesRouter);
 

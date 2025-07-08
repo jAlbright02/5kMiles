@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const backendURL = import.meta.env.MODE === 'development' ? '' : 'https://youshouldntfindthis.jamesalbright.website';
 
-export default function Admin() {
+export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,7 +12,9 @@ export default function Admin() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch(`${backendURL}/api/admin`, {
+    // TODO should look into how to safely handle passwords here
+
+    const res = await fetch(`${backendURL}/api/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
@@ -34,8 +36,8 @@ export default function Admin() {
   };
 
   return (
-    <form onSubmit={handleLogin} className='adminForm'>
-      <h2>Admin Login</h2>
+    <form onSubmit={handleLogin} className='loginForm'>
+      <h2>Login</h2>
       <input
         type="text"
         placeholder="Username"
