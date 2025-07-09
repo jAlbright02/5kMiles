@@ -6,9 +6,9 @@ dotenv.config();
 const loginRouter = Router();
 
 loginRouter.post('/', (req, res) => {
-  const { user, password } = req.body;
+  const { username, password } = req.body;
 
-  if (user === process.env.CATS_EM && password === process.env.CATS_PASS) {
+  if (username === process.env.CATS_EM && password === process.env.CATS_PASS) {
     return res.status(200).json({ pass: 'titch' });
   }
 

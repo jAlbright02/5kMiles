@@ -8,16 +8,17 @@ import Register from './pages/Accounts/Register';
 
 function NavBar() {
 
-  // TODO login needs to be added
+  // TODO register needs to be added
 
   return (
     <nav className='navbar'>
       <div className='nav-content'>
         <h2><Link to='/' className='nav-home'>5k Miles</Link></h2>
         <div>
-          <Link to='/login' className='nav-link'>Login</Link> 
-          <Link to='/bikes' className='nav-link'>Bikes</Link> 
-          <Link to='/maintenance-schedule' className='nav-link'>Maintenance</Link> 
+            <Link to='/register' className='nav-link'>Register</Link>
+            <Link to='/login' className='nav-link'>Login</Link> 
+            <Link to='/bikes' className='nav-link'>Bikes</Link> 
+            <Link to='/maintenance-schedule' className='nav-link'>Maintenance</Link>  
         </div>
       </div>
     </nav>
